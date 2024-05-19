@@ -10,4 +10,12 @@ class ProductColorSize extends Model
     use HasFactory;
     protected $fillable = ['product_size_id', 'product_color_id', 'quantity', 'price two', 'discount', 'status'];
     protected $table = 'product_color_size';
+
+    public function productColor() {
+        return $this->belongsTo(ProductColor::class);
+    }
+
+    public function productSize() {
+        return $this->belongsTo(ProductSize::class);
+    }
 }
